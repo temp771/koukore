@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KouKore.Sources.Desktop.KForm
 {
-    public partial class PerformanceInput : Form
+    public partial class PerformanceInputForm : Form
     {
-        public PerformanceInput()
+        public PerformanceInputForm()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
