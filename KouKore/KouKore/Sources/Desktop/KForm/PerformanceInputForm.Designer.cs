@@ -28,12 +28,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dotPerformTime = new KouKore.Sources.Desktop.KForm.KControl.DoubleOnlyTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbWorkType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.btnRegist = new System.Windows.Forms.Button();
+            this.dotPerformTime = new KouKore.Sources.Desktop.KForm.KControl.DoubleOnlyTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,14 +44,6 @@
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "実績工数";
-            // 
-            // dotPerformTime
-            // 
-            this.dotPerformTime.Location = new System.Drawing.Point(71, 6);
-            this.dotPerformTime.Mask = "99.99";
-            this.dotPerformTime.Name = "dotPerformTime";
-            this.dotPerformTime.Size = new System.Drawing.Size(39, 19);
-            this.dotPerformTime.TabIndex = 1;
             // 
             // label2
             // 
@@ -68,7 +60,7 @@
             this.cmbWorkType.Location = new System.Drawing.Point(192, 5);
             this.cmbWorkType.Name = "cmbWorkType";
             this.cmbWorkType.Size = new System.Drawing.Size(97, 20);
-            this.cmbWorkType.TabIndex = 3;
+            this.cmbWorkType.TabIndex = 2;
             // 
             // label3
             // 
@@ -84,18 +76,26 @@
             this.txtComment.Location = new System.Drawing.Point(71, 31);
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(411, 19);
-            this.txtComment.TabIndex = 5;
+            this.txtComment.TabIndex = 3;
             // 
             // btnRegist
             // 
             this.btnRegist.Location = new System.Drawing.Point(421, 4);
             this.btnRegist.Name = "btnRegist";
             this.btnRegist.Size = new System.Drawing.Size(61, 21);
-            this.btnRegist.TabIndex = 6;
+            this.btnRegist.TabIndex = 4;
             this.btnRegist.Text = "登録";
             this.btnRegist.UseVisualStyleBackColor = true;
             // 
-            // PerformanceInput
+            // dotPerformTime
+            // 
+            this.dotPerformTime.Location = new System.Drawing.Point(71, 6);
+            this.dotPerformTime.Mask = "##.##";
+            this.dotPerformTime.Name = "dotPerformTime";
+            this.dotPerformTime.Size = new System.Drawing.Size(39, 19);
+            this.dotPerformTime.TabIndex = 1;
+            // 
+            // PerformanceInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +107,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dotPerformTime);
             this.Controls.Add(this.label1);
-            this.Name = "PerformanceInput";
+            this.Name = "PerformanceInputForm";
             this.Text = "実績入力";
             this.ResumeLayout(false);
             this.PerformLayout();

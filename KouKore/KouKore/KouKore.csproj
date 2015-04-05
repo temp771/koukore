@@ -52,6 +52,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\Common\KDao\KouKoreDataSet.cs">
+      <DependentUpon>KouKoreDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sources\Common\KDao\KouKoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KouKoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Common\KForm\MasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Common\KForm\MasterForm.Designer.cs">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Desktop\KForm\KControl\DoubleOnlyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -73,6 +88,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sources\Common\KForm\MasterForm.resx">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Desktop\KForm\KControl\DoubleOnlyTextBox.resx">
       <DependentUpon>DoubleOnlyTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,15 +106,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sources\Common\KDao\KouKoreDataSet.xsc">
+      <DependentUpon>KouKoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Sources\Common\KDao\KouKoreDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KouKoreDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Sources\Common\KDao\KouKoreDataSet.xss">
+      <DependentUpon>KouKoreDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sources\Common\" />
     <Folder Include="Sources\Desktop\KDao\" />
     <Folder Include="Sources\Desktop\KForm\Common\" />
     <Folder Include="Sources\Desktop\KLogic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sources\Common\KDao\test.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KouKore.Sources.Desktop.KForm;
+using KouKore.Sources.Common.KForm;
 
 namespace KouKore
 {
@@ -16,7 +18,7 @@ namespace KouKore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MasterForm());
         }
     }
 }
