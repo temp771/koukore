@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,12 @@
     <Compile Include="Sources\Common\KForm\MasterForm.Designer.cs">
       <DependentUpon>MasterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Desktop\KForm\DriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Desktop\KForm\DriverForm.Designer.cs">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Desktop\KForm\KControl\DoubleOnlyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -79,23 +86,36 @@
     <Compile Include="Sources\Desktop\KForm\PerformanceInputForm.Designer.cs">
       <DependentUpon>PerformanceInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Desktop\KForm\TicketListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Desktop\KForm\TicketListForm.Designer.cs">
+      <DependentUpon>TicketListForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Sources\Common\KForm\MasterForm.resx">
       <DependentUpon>MasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Desktop\KForm\DriverForm.resx">
+      <DependentUpon>DriverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Desktop\KForm\KControl\DoubleOnlyTextBox.resx">
       <DependentUpon>DoubleOnlyTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Desktop\KForm\PerformanceInputForm.resx">
       <DependentUpon>PerformanceInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Desktop\KForm\TicketListForm.resx">
+      <DependentUpon>TicketListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,11 +143,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sources\Desktop\KDao\" />
-    <Folder Include="Sources\Desktop\KForm\Common\" />
     <Folder Include="Sources\Desktop\KLogic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sources\Common\KDao\test.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

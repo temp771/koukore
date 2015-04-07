@@ -18,7 +18,7 @@ namespace KouKore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MasterForm());
+            Application.Run(new DriverForm());
         }
     }
 }

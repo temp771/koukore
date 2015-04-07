@@ -34,15 +34,13 @@ namespace KouKore.Sources.Common.KDao {
         
         private WorkTypeTableDataTable tableWorkTypeTable;
         
-        private TableListDataTable tableTableList;
+        private global::System.Data.DataRelation relationFK_ProcessTable_TicketTable;
         
         private global::System.Data.DataRelation relationFK_UserTable_TicketTable;
         
-        private global::System.Data.DataRelation relationFK_ProcessTable_TicketTable;
+        private global::System.Data.DataRelation relationFK_WorkTypeTable_PerformanceTable;
         
         private global::System.Data.DataRelation relationFK_TicketTable_PerformanceTable;
-        
-        private global::System.Data.DataRelation relationFK_WorkTypeTable_PerformanceTable;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -86,9 +84,6 @@ namespace KouKore.Sources.Common.KDao {
                 }
                 if ((ds.Tables["WorkTypeTable"] != null)) {
                     base.Tables.Add(new WorkTypeTableDataTable(ds.Tables["WorkTypeTable"]));
-                }
-                if ((ds.Tables["TableList"] != null)) {
-                    base.Tables.Add(new TableListDataTable(ds.Tables["TableList"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -155,16 +150,6 @@ namespace KouKore.Sources.Common.KDao {
         public WorkTypeTableDataTable WorkTypeTable {
             get {
                 return this.tableWorkTypeTable;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TableListDataTable TableList {
-            get {
-                return this.tableTableList;
             }
         }
         
@@ -250,9 +235,6 @@ namespace KouKore.Sources.Common.KDao {
                 if ((ds.Tables["WorkTypeTable"] != null)) {
                     base.Tables.Add(new WorkTypeTableDataTable(ds.Tables["WorkTypeTable"]));
                 }
-                if ((ds.Tables["TableList"] != null)) {
-                    base.Tables.Add(new TableListDataTable(ds.Tables["TableList"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -316,16 +298,10 @@ namespace KouKore.Sources.Common.KDao {
                     this.tableWorkTypeTable.InitVars();
                 }
             }
-            this.tableTableList = ((TableListDataTable)(base.Tables["TableList"]));
-            if ((initTable == true)) {
-                if ((this.tableTableList != null)) {
-                    this.tableTableList.InitVars();
-                }
-            }
-            this.relationFK_UserTable_TicketTable = this.Relations["FK_UserTable_TicketTable"];
             this.relationFK_ProcessTable_TicketTable = this.Relations["FK_ProcessTable_TicketTable"];
-            this.relationFK_TicketTable_PerformanceTable = this.Relations["FK_TicketTable_PerformanceTable"];
+            this.relationFK_UserTable_TicketTable = this.Relations["FK_UserTable_TicketTable"];
             this.relationFK_WorkTypeTable_PerformanceTable = this.Relations["FK_WorkTypeTable_PerformanceTable"];
+            this.relationFK_TicketTable_PerformanceTable = this.Relations["FK_TicketTable_PerformanceTable"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -346,16 +322,7 @@ namespace KouKore.Sources.Common.KDao {
             base.Tables.Add(this.tablePerformanceTable);
             this.tableWorkTypeTable = new WorkTypeTableDataTable();
             base.Tables.Add(this.tableWorkTypeTable);
-            this.tableTableList = new TableListDataTable();
-            base.Tables.Add(this.tableTableList);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_UserTable_TicketTable", new global::System.Data.DataColumn[] {
-                        this.tableUserTable.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTicketTable.UserIDColumn});
-            this.tableTicketTable.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_ProcessTable_TicketTable", new global::System.Data.DataColumn[] {
                         this.tableProcessTable.ProcessIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketTable.ProcessIDColumn});
@@ -363,10 +330,10 @@ namespace KouKore.Sources.Common.KDao {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketTable_PerformanceTable", new global::System.Data.DataColumn[] {
-                        this.tableTicketTable.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePerformanceTable.TicketIDColumn});
-            this.tablePerformanceTable.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_UserTable_TicketTable", new global::System.Data.DataColumn[] {
+                        this.tableUserTable.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTicketTable.UserIDColumn});
+            this.tableTicketTable.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -377,22 +344,29 @@ namespace KouKore.Sources.Common.KDao {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_UserTable_TicketTable = new global::System.Data.DataRelation("FK_UserTable_TicketTable", new global::System.Data.DataColumn[] {
-                        this.tableUserTable.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTicketTable.UserIDColumn}, false);
-            this.Relations.Add(this.relationFK_UserTable_TicketTable);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketTable_PerformanceTable", new global::System.Data.DataColumn[] {
+                        this.tableTicketTable.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePerformanceTable.TicketIDColumn});
+            this.tablePerformanceTable.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_ProcessTable_TicketTable = new global::System.Data.DataRelation("FK_ProcessTable_TicketTable", new global::System.Data.DataColumn[] {
                         this.tableProcessTable.ProcessIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketTable.ProcessIDColumn}, false);
             this.Relations.Add(this.relationFK_ProcessTable_TicketTable);
-            this.relationFK_TicketTable_PerformanceTable = new global::System.Data.DataRelation("FK_TicketTable_PerformanceTable", new global::System.Data.DataColumn[] {
-                        this.tableTicketTable.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePerformanceTable.TicketIDColumn}, false);
-            this.Relations.Add(this.relationFK_TicketTable_PerformanceTable);
+            this.relationFK_UserTable_TicketTable = new global::System.Data.DataRelation("FK_UserTable_TicketTable", new global::System.Data.DataColumn[] {
+                        this.tableUserTable.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTicketTable.UserIDColumn}, false);
+            this.Relations.Add(this.relationFK_UserTable_TicketTable);
             this.relationFK_WorkTypeTable_PerformanceTable = new global::System.Data.DataRelation("FK_WorkTypeTable_PerformanceTable", new global::System.Data.DataColumn[] {
                         this.tableWorkTypeTable.WorkTypeIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePerformanceTable.WorkTypeIDColumn}, false);
             this.Relations.Add(this.relationFK_WorkTypeTable_PerformanceTable);
+            this.relationFK_TicketTable_PerformanceTable = new global::System.Data.DataRelation("FK_TicketTable_PerformanceTable", new global::System.Data.DataColumn[] {
+                        this.tableTicketTable.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePerformanceTable.TicketIDColumn}, false);
+            this.Relations.Add(this.relationFK_TicketTable_PerformanceTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,12 +396,6 @@ namespace KouKore.Sources.Common.KDao {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeWorkTypeTable() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTableList() {
             return false;
         }
         
@@ -500,9 +468,6 @@ namespace KouKore.Sources.Common.KDao {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void WorkTypeTableRowChangeEventHandler(object sender, WorkTypeTableRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void TableListRowChangeEventHandler(object sender, TableListRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1925,267 +1890,6 @@ namespace KouKore.Sources.Common.KDao {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TableListDataTable : global::System.Data.TypedTableBase<TableListRow> {
-            
-            private global::System.Data.DataColumn columnTableID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListDataTable() {
-                this.TableName = "TableList";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TableListDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected TableListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TableIDColumn {
-                get {
-                    return this.columnTableID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListRow this[int index] {
-                get {
-                    return ((TableListRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableListRowChangeEventHandler TableListRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableListRowChangeEventHandler TableListRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableListRowChangeEventHandler TableListRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TableListRowChangeEventHandler TableListRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTableListRow(TableListRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListRow AddTableListRow(string TableID, string Name) {
-                TableListRow rowTableListRow = ((TableListRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        TableID,
-                        Name};
-                rowTableListRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTableListRow);
-                return rowTableListRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                TableListDataTable cln = ((TableListDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new TableListDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnTableID = base.Columns["TableID"];
-                this.columnName = base.Columns["Name"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnTableID = new global::System.Data.DataColumn("TableID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTableID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListRow NewTableListRow() {
-                return ((TableListRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TableListRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(TableListRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.TableListRowChanged != null)) {
-                    this.TableListRowChanged(this, new TableListRowChangeEvent(((TableListRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.TableListRowChanging != null)) {
-                    this.TableListRowChanging(this, new TableListRowChangeEvent(((TableListRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.TableListRowDeleted != null)) {
-                    this.TableListRowDeleted(this, new TableListRowChangeEvent(((TableListRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.TableListRowDeleting != null)) {
-                    this.TableListRowDeleting(this, new TableListRowChangeEvent(((TableListRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTableListRow(TableListRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                KouKoreDataSet ds = new KouKoreDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TableListDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class TicketTableRow : global::System.Data.DataRow {
@@ -2250,23 +1954,23 @@ namespace KouKore.Sources.Common.KDao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UserTableRow UserTableRow {
-                get {
-                    return ((UserTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_UserTable_TicketTable"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_UserTable_TicketTable"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProcessTableRow ProcessTableRow {
                 get {
                     return ((ProcessTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_ProcessTable_TicketTable"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ProcessTable_TicketTable"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UserTableRow UserTableRow {
+                get {
+                    return ((UserTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_UserTable_TicketTable"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_UserTable_TicketTable"]);
                 }
             }
             
@@ -2549,23 +2253,23 @@ namespace KouKore.Sources.Common.KDao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TicketTableRow TicketTableRow {
-                get {
-                    return ((TicketTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketTable_PerformanceTable"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketTable_PerformanceTable"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public WorkTypeTableRow WorkTypeTableRow {
                 get {
                     return ((WorkTypeTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_WorkTypeTable_PerformanceTable"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_WorkTypeTable_PerformanceTable"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TicketTableRow TicketTableRow {
+                get {
+                    return ((TicketTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketTable_PerformanceTable"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketTable_PerformanceTable"]);
                 }
             }
             
@@ -2697,77 +2401,6 @@ namespace KouKore.Sources.Common.KDao {
                 else {
                     return ((PerformanceTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_WorkTypeTable_PerformanceTable"])));
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class TableListRow : global::System.Data.DataRow {
-            
-            private TableListDataTable tableTableList;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TableListRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableTableList = ((TableListDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TableID {
-                get {
-                    try {
-                        return ((string)(this[this.tableTableList.TableIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'TableList\' にある列 \'TableID\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableTableList.TableIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableTableList.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'TableList\' にある列 \'Name\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableTableList.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTableIDNull() {
-                return this.IsNull(this.tableTableList.TableIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTableIDNull() {
-                this[this.tableTableList.TableIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableTableList.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableTableList.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2927,40 +2560,6 @@ namespace KouKore.Sources.Common.KDao {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public WorkTypeTableRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class TableListRowChangeEvent : global::System.EventArgs {
-            
-            private TableListRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListRowChangeEvent(TableListRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableListRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -27,13 +27,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbWorkType = new System.Windows.Forms.ComboBox();
+            this.bsWorkType = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMain = new KouKore.Sources.Common.KDao.KouKoreDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.btnRegist = new System.Windows.Forms.Button();
             this.dotPerformTime = new KouKore.Sources.Desktop.KForm.KControl.DoubleOnlyTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,11 +61,24 @@
             // 
             // cmbWorkType
             // 
+            this.cmbWorkType.DataSource = this.bsWorkType;
+            this.cmbWorkType.DisplayMember = "Name";
             this.cmbWorkType.FormattingEnabled = true;
             this.cmbWorkType.Location = new System.Drawing.Point(192, 5);
             this.cmbWorkType.Name = "cmbWorkType";
             this.cmbWorkType.Size = new System.Drawing.Size(97, 20);
             this.cmbWorkType.TabIndex = 2;
+            this.cmbWorkType.ValueMember = "WorkTypeID";
+            // 
+            // bsWorkType
+            // 
+            this.bsWorkType.DataMember = "WorkTypeTable";
+            this.bsWorkType.DataSource = this.dsMain;
+            // 
+            // dsMain
+            // 
+            this.dsMain.DataSetName = "KouKoreDataSet";
+            this.dsMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -109,6 +127,9 @@
             this.Controls.Add(this.label1);
             this.Name = "PerformanceInputForm";
             this.Text = "実績入力";
+            this.Load += new System.EventHandler(this.PerformanceInputForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +144,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Button btnRegist;
+        private Common.KDao.KouKoreDataSet dsMain;
+        private System.Windows.Forms.BindingSource bsWorkType;
 
     }
 }

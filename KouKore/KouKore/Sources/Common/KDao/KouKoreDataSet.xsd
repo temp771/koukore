@@ -12,7 +12,7 @@
   <xs:element name="KouKoreDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="KouKoreDataSet" msprop:Generator_UserDSName="KouKoreDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TicketTable" msprop:Generator_TableClassName="TicketTableDataTable" msprop:Generator_TableVarName="tableTicketTable" msprop:Generator_TablePropName="TicketTable" msprop:Generator_RowDeletingName="TicketTableRowDeleting" msprop:Generator_RowChangingName="TicketTableRowChanging" msprop:Generator_RowEvHandlerName="TicketTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketTableRowDeleted" msprop:Generator_UserTableName="TicketTable" msprop:Generator_RowChangedName="TicketTableRowChanged" msprop:Generator_RowEvArgName="TicketTableRowChangeEvent" msprop:Generator_RowClassName="TicketTableRow">
+        <xs:element name="TicketTable" msprop:Generator_TableClassName="TicketTableDataTable" msprop:Generator_TableVarName="tableTicketTable" msprop:Generator_RowChangedName="TicketTableRowChanged" msprop:Generator_TablePropName="TicketTable" msprop:Generator_RowDeletingName="TicketTableRowDeleting" msprop:Generator_RowChangingName="TicketTableRowChanging" msprop:Generator_RowEvHandlerName="TicketTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketTableRowDeleted" msprop:Generator_RowClassName="TicketTableRow" msprop:Generator_UserTableName="TicketTable" msprop:Generator_RowEvArgName="TicketTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketID" msprop:Generator_ColumnVarNameInTable="columnTicketID" msprop:Generator_ColumnPropNameInRow="TicketID" msprop:Generator_ColumnPropNameInTable="TicketIDColumn" msprop:Generator_UserColumnName="TicketID" type="xs:string" />
@@ -22,7 +22,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserTable" msprop:Generator_TableClassName="UserTableDataTable" msprop:Generator_TableVarName="tableUserTable" msprop:Generator_TablePropName="UserTable" msprop:Generator_RowDeletingName="UserTableRowDeleting" msprop:Generator_RowChangingName="UserTableRowChanging" msprop:Generator_RowEvHandlerName="UserTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTableRowDeleted" msprop:Generator_UserTableName="UserTable" msprop:Generator_RowChangedName="UserTableRowChanged" msprop:Generator_RowEvArgName="UserTableRowChangeEvent" msprop:Generator_RowClassName="UserTableRow">
+        <xs:element name="UserTable" msprop:Generator_TableClassName="UserTableDataTable" msprop:Generator_TableVarName="tableUserTable" msprop:Generator_RowChangedName="UserTableRowChanged" msprop:Generator_TablePropName="UserTable" msprop:Generator_RowDeletingName="UserTableRowDeleting" msprop:Generator_RowChangingName="UserTableRowChanging" msprop:Generator_RowEvHandlerName="UserTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTableRowDeleted" msprop:Generator_RowClassName="UserTableRow" msprop:Generator_UserTableName="UserTable" msprop:Generator_RowEvArgName="UserTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:string" minOccurs="0" />
@@ -30,7 +30,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProcessTable" msprop:Generator_TableClassName="ProcessTableDataTable" msprop:Generator_TableVarName="tableProcessTable" msprop:Generator_TablePropName="ProcessTable" msprop:Generator_RowDeletingName="ProcessTableRowDeleting" msprop:Generator_RowChangingName="ProcessTableRowChanging" msprop:Generator_RowEvHandlerName="ProcessTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProcessTableRowDeleted" msprop:Generator_UserTableName="ProcessTable" msprop:Generator_RowChangedName="ProcessTableRowChanged" msprop:Generator_RowEvArgName="ProcessTableRowChangeEvent" msprop:Generator_RowClassName="ProcessTableRow">
+        <xs:element name="ProcessTable" msprop:Generator_TableClassName="ProcessTableDataTable" msprop:Generator_TableVarName="tableProcessTable" msprop:Generator_RowChangedName="ProcessTableRowChanged" msprop:Generator_TablePropName="ProcessTable" msprop:Generator_RowDeletingName="ProcessTableRowDeleting" msprop:Generator_RowChangingName="ProcessTableRowChanging" msprop:Generator_RowEvHandlerName="ProcessTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProcessTableRowDeleted" msprop:Generator_RowClassName="ProcessTableRow" msprop:Generator_UserTableName="ProcessTable" msprop:Generator_RowEvArgName="ProcessTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProcessID" msprop:Generator_ColumnVarNameInTable="columnProcessID" msprop:Generator_ColumnPropNameInRow="ProcessID" msprop:Generator_ColumnPropNameInTable="ProcessIDColumn" msprop:Generator_UserColumnName="ProcessID" type="xs:string" minOccurs="0" />
@@ -38,7 +38,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PerformanceTable" msprop:Generator_TableClassName="PerformanceTableDataTable" msprop:Generator_TableVarName="tablePerformanceTable" msprop:Generator_TablePropName="PerformanceTable" msprop:Generator_RowDeletingName="PerformanceTableRowDeleting" msprop:Generator_RowChangingName="PerformanceTableRowChanging" msprop:Generator_RowEvHandlerName="PerformanceTableRowChangeEventHandler" msprop:Generator_RowDeletedName="PerformanceTableRowDeleted" msprop:Generator_UserTableName="PerformanceTable" msprop:Generator_RowChangedName="PerformanceTableRowChanged" msprop:Generator_RowEvArgName="PerformanceTableRowChangeEvent" msprop:Generator_RowClassName="PerformanceTableRow">
+        <xs:element name="PerformanceTable" msprop:Generator_TableClassName="PerformanceTableDataTable" msprop:Generator_TableVarName="tablePerformanceTable" msprop:Generator_RowChangedName="PerformanceTableRowChanged" msprop:Generator_TablePropName="PerformanceTable" msprop:Generator_RowDeletingName="PerformanceTableRowDeleting" msprop:Generator_RowChangingName="PerformanceTableRowChanging" msprop:Generator_RowEvHandlerName="PerformanceTableRowChangeEventHandler" msprop:Generator_RowDeletedName="PerformanceTableRowDeleted" msprop:Generator_RowClassName="PerformanceTableRow" msprop:Generator_UserTableName="PerformanceTable" msprop:Generator_RowEvArgName="PerformanceTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PerformID" msprop:Generator_ColumnVarNameInTable="columnPerformID" msprop:Generator_ColumnPropNameInRow="PerformID" msprop:Generator_ColumnPropNameInTable="PerformIDColumn" msprop:Generator_UserColumnName="PerformID" type="xs:string" />
@@ -49,18 +49,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WorkTypeTable" msprop:Generator_TableClassName="WorkTypeTableDataTable" msprop:Generator_TableVarName="tableWorkTypeTable" msprop:Generator_TablePropName="WorkTypeTable" msprop:Generator_RowDeletingName="WorkTypeTableRowDeleting" msprop:Generator_RowChangingName="WorkTypeTableRowChanging" msprop:Generator_RowEvHandlerName="WorkTypeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkTypeTableRowDeleted" msprop:Generator_UserTableName="WorkTypeTable" msprop:Generator_RowChangedName="WorkTypeTableRowChanged" msprop:Generator_RowEvArgName="WorkTypeTableRowChangeEvent" msprop:Generator_RowClassName="WorkTypeTableRow">
+        <xs:element name="WorkTypeTable" msprop:Generator_TableClassName="WorkTypeTableDataTable" msprop:Generator_TableVarName="tableWorkTypeTable" msprop:Generator_RowChangedName="WorkTypeTableRowChanged" msprop:Generator_TablePropName="WorkTypeTable" msprop:Generator_RowDeletingName="WorkTypeTableRowDeleting" msprop:Generator_RowChangingName="WorkTypeTableRowChanging" msprop:Generator_RowEvHandlerName="WorkTypeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkTypeTableRowDeleted" msprop:Generator_RowClassName="WorkTypeTableRow" msprop:Generator_UserTableName="WorkTypeTable" msprop:Generator_RowEvArgName="WorkTypeTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="WorkTypeID" msprop:Generator_ColumnVarNameInTable="columnWorkTypeID" msprop:Generator_ColumnPropNameInRow="WorkTypeID" msprop:Generator_ColumnPropNameInTable="WorkTypeIDColumn" msprop:Generator_UserColumnName="WorkTypeID" type="xs:string" minOccurs="0" />
-              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="TableList" msprop:Generator_TableClassName="TableListDataTable" msprop:Generator_TableVarName="tableTableList" msprop:Generator_TablePropName="TableList" msprop:Generator_RowDeletingName="TableListRowDeleting" msprop:Generator_RowChangingName="TableListRowChanging" msprop:Generator_RowEvHandlerName="TableListRowChangeEventHandler" msprop:Generator_RowDeletedName="TableListRowDeleted" msprop:Generator_UserTableName="TableList" msprop:Generator_RowChangedName="TableListRowChanged" msprop:Generator_RowEvArgName="TableListRowChangeEvent" msprop:Generator_RowClassName="TableListRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TableID" msprop:Generator_ColumnVarNameInTable="columnTableID" msprop:Generator_ColumnPropNameInRow="TableID" msprop:Generator_ColumnPropNameInTable="TableIDColumn" msprop:Generator_UserColumnName="TableID" type="xs:string" minOccurs="0" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -87,21 +79,21 @@
       <xs:selector xpath=".//mstns:WorkTypeTable" />
       <xs:field xpath="mstns:WorkTypeID" />
     </xs:unique>
-    <xs:keyref name="FK_TicketTable_PerformanceTable" refer="Constraint1" msprop:rel_Generator_UserChildTable="PerformanceTable" msprop:rel_Generator_ChildPropName="GetPerformanceTableRows" msprop:rel_Generator_UserRelationName="FK_TicketTable_PerformanceTable" msprop:rel_Generator_ParentPropName="TicketTableRow" msprop:rel_Generator_RelationVarName="relationFK_TicketTable_PerformanceTable" msprop:rel_Generator_UserParentTable="TicketTable">
-      <xs:selector xpath=".//mstns:PerformanceTable" />
-      <xs:field xpath="mstns:TicketID" />
-    </xs:keyref>
-    <xs:keyref name="FK_WorkTypeTable_PerformanceTable" refer="WorkTypeTable_Constraint1" msprop:rel_Generator_UserChildTable="PerformanceTable" msprop:rel_Generator_ChildPropName="GetPerformanceTableRows" msprop:rel_Generator_UserRelationName="FK_WorkTypeTable_PerformanceTable" msprop:rel_Generator_RelationVarName="relationFK_WorkTypeTable_PerformanceTable" msprop:rel_Generator_UserParentTable="WorkTypeTable" msprop:rel_Generator_ParentPropName="WorkTypeTableRow">
+    <xs:keyref name="FK_WorkTypeTable_PerformanceTable" refer="WorkTypeTable_Constraint1" msprop:rel_Generator_UserChildTable="PerformanceTable" msprop:rel_Generator_ChildPropName="GetPerformanceTableRows" msprop:rel_Generator_UserRelationName="FK_WorkTypeTable_PerformanceTable" msprop:rel_Generator_ParentPropName="WorkTypeTableRow" msprop:rel_Generator_RelationVarName="relationFK_WorkTypeTable_PerformanceTable" msprop:rel_Generator_UserParentTable="WorkTypeTable">
       <xs:selector xpath=".//mstns:PerformanceTable" />
       <xs:field xpath="mstns:WorkTypeID" />
     </xs:keyref>
-    <xs:keyref name="FK_UserTable_TicketTable" refer="UserTable_Constraint1" msprop:rel_Generator_UserChildTable="TicketTable" msprop:rel_Generator_ChildPropName="GetTicketTableRows" msprop:rel_Generator_UserRelationName="FK_UserTable_TicketTable" msprop:rel_Generator_RelationVarName="relationFK_UserTable_TicketTable" msprop:rel_Generator_UserParentTable="UserTable" msprop:rel_Generator_ParentPropName="UserTableRow">
-      <xs:selector xpath=".//mstns:TicketTable" />
-      <xs:field xpath="mstns:UserID" />
+    <xs:keyref name="FK_TicketTable_PerformanceTable" refer="Constraint1" msprop:rel_Generator_UserChildTable="PerformanceTable" msprop:rel_Generator_ChildPropName="GetPerformanceTableRows" msprop:rel_Generator_UserRelationName="FK_TicketTable_PerformanceTable" msprop:rel_Generator_RelationVarName="relationFK_TicketTable_PerformanceTable" msprop:rel_Generator_UserParentTable="TicketTable" msprop:rel_Generator_ParentPropName="TicketTableRow">
+      <xs:selector xpath=".//mstns:PerformanceTable" />
+      <xs:field xpath="mstns:TicketID" />
     </xs:keyref>
-    <xs:keyref name="FK_ProcessTable_TicketTable" refer="ProcessTable_Constraint1" msprop:rel_Generator_UserChildTable="TicketTable" msprop:rel_Generator_ChildPropName="GetTicketTableRows" msprop:rel_Generator_UserRelationName="FK_ProcessTable_TicketTable" msprop:rel_Generator_RelationVarName="relationFK_ProcessTable_TicketTable" msprop:rel_Generator_UserParentTable="ProcessTable" msprop:rel_Generator_ParentPropName="ProcessTableRow">
+    <xs:keyref name="FK_ProcessTable_TicketTable" refer="ProcessTable_Constraint1" msprop:rel_Generator_UserChildTable="TicketTable" msprop:rel_Generator_ChildPropName="GetTicketTableRows" msprop:rel_Generator_UserRelationName="FK_ProcessTable_TicketTable" msprop:rel_Generator_ParentPropName="ProcessTableRow" msprop:rel_Generator_RelationVarName="relationFK_ProcessTable_TicketTable" msprop:rel_Generator_UserParentTable="ProcessTable">
       <xs:selector xpath=".//mstns:TicketTable" />
       <xs:field xpath="mstns:ProcessID" />
+    </xs:keyref>
+    <xs:keyref name="FK_UserTable_TicketTable" refer="UserTable_Constraint1" msprop:rel_Generator_UserChildTable="TicketTable" msprop:rel_Generator_ChildPropName="GetTicketTableRows" msprop:rel_Generator_UserRelationName="FK_UserTable_TicketTable" msprop:rel_Generator_ParentPropName="UserTableRow" msprop:rel_Generator_RelationVarName="relationFK_UserTable_TicketTable" msprop:rel_Generator_UserParentTable="UserTable">
+      <xs:selector xpath=".//mstns:TicketTable" />
+      <xs:field xpath="mstns:UserID" />
     </xs:keyref>
   </xs:element>
 </xs:schema>
