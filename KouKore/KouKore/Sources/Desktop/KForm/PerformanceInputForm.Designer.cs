@@ -31,14 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbWorkType = new System.Windows.Forms.ComboBox();
-            this.bsWorkType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsMain = new KouKore.Sources.Common.KDao.KouKoreDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.btnRegist = new System.Windows.Forms.Button();
             this.dotPerformTime = new KouKore.Sources.Desktop.KForm.KControl.DoubleOnlyTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).BeginInit();
+            this.dsMain = new KouKore.Sources.Common.KDao.KouKoreDataSet();
+            this.bsWorkType = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,24 +61,12 @@
             // 
             // cmbWorkType
             // 
-            this.cmbWorkType.DataSource = this.bsWorkType;
-            this.cmbWorkType.DisplayMember = "Name";
             this.cmbWorkType.FormattingEnabled = true;
             this.cmbWorkType.Location = new System.Drawing.Point(192, 5);
             this.cmbWorkType.Name = "cmbWorkType";
             this.cmbWorkType.Size = new System.Drawing.Size(97, 20);
             this.cmbWorkType.TabIndex = 2;
             this.cmbWorkType.ValueMember = "WorkTypeID";
-            // 
-            // bsWorkType
-            // 
-            this.bsWorkType.DataMember = "WorkTypeTable";
-            this.bsWorkType.DataSource = this.dsMain;
-            // 
-            // dsMain
-            // 
-            this.dsMain.DataSetName = "KouKoreDataSet";
-            this.dsMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -113,6 +101,16 @@
             this.dotPerformTime.Size = new System.Drawing.Size(39, 19);
             this.dotPerformTime.TabIndex = 1;
             // 
+            // dsMain
+            // 
+            this.dsMain.DataSetName = "KouKoreDataSet";
+            this.dsMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsWorkType
+            // 
+            this.bsWorkType.DataSource = this.dsMain;
+            this.bsWorkType.Position = 0;
+            // 
             // PerformanceInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -128,8 +126,8 @@
             this.Name = "PerformanceInputForm";
             this.Text = "実績入力";
             this.Load += new System.EventHandler(this.PerformanceInputForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWorkType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

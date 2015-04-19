@@ -31,5 +31,12 @@ namespace KouKore.Sources.Desktop.KForm
             messageBoxCS.AppendLine();
             MessageBox.Show(messageBoxCS.ToString(), "CellDoubleClick Event" );
         }
+
+        private void TicketListForm_Load(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'dsMain.issues' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.issuesTableAdapter.Fill(this.dsMain.issues);
+
+        }
     }
 }

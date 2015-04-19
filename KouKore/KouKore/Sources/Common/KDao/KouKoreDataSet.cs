@@ -2,5 +2,8 @@
     
     
     public partial class KouKoreDataSet {
+        partial class enumerations_activeDataTable
+        {
+        }
     }
 }
